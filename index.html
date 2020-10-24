@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Красивая распечатка оценок</title>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <link href="print.css" rel="stylesheet" media="print" type="text/css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="box">
+              <h1 class="header_title">
+                Распечатка оценок
+              </h1>
+              <span class="header_signature">
+              Составитель учитель физики
+              </span>
+              <span class="header_signature">
+                Задорожко Лилия Алексеевна
+              </span>
+              <span class="header_signature">
+                г.Рязань, МБОУ &#171;Школа № 64&#187;
+              </span>
+            </div>
+        </header>
+
+        <main class="main box">
+            <input type="file" name="readable" accept=".csv" />
+            <a href="#" class="printButton" onclick="window.print();return false;">Распечатать</a> 
+            <div class="manual">
+                <p><span class="fat">Инструкция по пользованию сервисом</span></p>
+                <ol class="manual_list">
+                    <li>
+                        Сформировать в электронном журнале список оценок. 
+                        Скачать файл-excel &laquo;Текущая_успеваемость_хх.хх_хх.хх.хххх_хххххх.xls&raquo;.
+                    </li>
+                    <li>
+                        <span class="fat">САМЫЙ ВАЖНЫЙ ПУНКТ!</span> Открыть файл в Excel и сохранить в формате 
+                        <span class="fat">.csv (разделители - запятые)</span>.
+                    </li>
+                    <li>
+                        Загрузите файл (.csv) через форму в верхней части экрана. 
+                    </li>
+                    <li>
+                        Сервис обработает файл: удалит лишние строки и сформирует карточки с оценками для каждого ученика. 
+                        Результат будет предствален на экране.
+                    </li>
+                    <li>
+                        <span class="fat">Внимание!</span> Перед распечаткой результатов в настройках браузера рекомендуется проверить 
+                        установки принтера. Оптимальные настройки:
+                        <ul class="manual_list">
+                            <li>выбрать нужный принтер;</li>
+                            <li>размер бумаги - А4;</li>
+                            <li>ориентация листа - книжная;</li>
+                            <li>поля - минимальные. (Если пункт &laquo;минимальные&raquo; отсутствует, 
+                                то установите по 1 см с каждой стороны);</li>
+                            <li>верхние и нижние колонтитулы - отключить;</li>
+                            <li>масштаб - 100%;</li>
+                        </ul>
+                    </li>
+                    <li>Распечатайте файл используя ссылку сервиса &laquo;Распечатать&raquo; или печать из 
+                        настроек браузера. Нормальное расположение карточек: в два столбца, 4 - 6 на листе.</li>
+                    <li>Проявите находчивость, озадачьте кого-нибудь аккуратно разрезать листы на отдельные карточки.</li>
+                </ol>
+            </div> 
+            <div id="preview"></div>           
+        </main>
+
+        <footer class="footer">
+            <div class="box">
+              <span class="footer_signature">
+                &copy; Low LeveL
+              </span>
+            </div>
+          </footer>
+
+          <script src="readfile.js"></script>
+    </body>
+</html>
