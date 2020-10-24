@@ -3,12 +3,13 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-size: 14px;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    /* min-height: 100%; */
 }
 
 .box {
@@ -47,6 +48,18 @@ body {
     flex-wrap: wrap;
     padding-top: 20px;
     padding-bottom: 20px;
+    min-width: 220px;
+}
+
+input {
+    max-width: 220px;
+    height: 40px;
+}
+
+.printButton {
+    margin-left: auto;
+    display: block;
+    height: 40px;
 }
 
 .manual_list>li:nth-child(n + 1) {
@@ -65,11 +78,11 @@ body {
 }
 
 #preview {
-    min-width: 100%;
+    justify-content: space-between;
 }
 
 .table {
-    flex: 1 0 32%;
+    width: 32%;
     display: block;
     margin: 3px;
     border: 1px #000000 solid;
@@ -78,12 +91,6 @@ body {
 .table > tbody > tr:nth-of-type(2n) {
     background-color:#CCCCCC;
 }
-
-.printButton {
-    margin-left: auto;
-    display: block;
-}
-
 
 /* Подвал */
 
@@ -103,13 +110,22 @@ body {
 @media screen and (min-width: 640px) and (max-width: 1023px) {
 
     .table {
-        flex: 1 0 48%;
+        width: 48%;
     }
 }
 
 @media screen and (max-width: 639px) {
 
+    body {
+        font-size: 12px;
+    }
+
     .table {
         min-width: 100%;
+    }
+
+    .printButton {
+        width: 100%;
+        display: block;
     }
 }
