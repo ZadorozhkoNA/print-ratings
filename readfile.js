@@ -37,6 +37,8 @@ function handleFile(event) {
     // создание таблицы привязываем к событию `load`,
     // которое срабатывает при успешном завершении операции чтения.
     reader.onload = (e) =>{
+      // Очищаем элемент для вывода таблицы.
+      PREVIEW.innerHTML = '';
       //Удаляем лишние строки
       let array = prepareArray(e.target.result, delElements);
       //Разбиваем массив по ученикам
@@ -109,12 +111,16 @@ function renderTable(data) {
         // Перебираем полученный массив будущих ячеек.
         row.split(/;/).forEach(function(cell) {
           
-          // Создадим элемент ячейки для таблицы.
-          let tcell = document.createElement(index > 0 ? 'td' : 'th');
-          // Заполним содержимое ячейки.
-          tcell.textContent = cell;
-          // Добавляем ячейку к родительской строке.
-          trow.appendChild(tcell);
+          if (cell != '') {
+            cell = cell.replaceAll(',', ', ');
+            // Создадим элемент ячейки для таблицы.
+            let tcell = document.createElement(index > 0 ? 'td' : 'th');
+            // Заполним содержимое ячейки.
+            tcell.textContent = cell;
+            console.log(cell);
+            // Добавляем ячейку к родительской строке.
+            trow.appendChild(tcell);
+          }
         });
   
         // Добавляем строку к родительскому элементу.
