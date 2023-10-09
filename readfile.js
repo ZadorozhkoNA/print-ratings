@@ -84,6 +84,7 @@ function separatorArray(array, separator) {
     }
     miniArray.push(item);
   })
+  newArray.push(miniArray);
   return newArray;
 }
 
